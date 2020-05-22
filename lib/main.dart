@@ -43,10 +43,59 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Container(
-        child: Stepper(steps: [
-          Step()
-
-        ],),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          children: [
+            Container(
+              height: 64,
+              width: MediaQuery.of(context).size.width,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Stepper(
+                  type: StepperType.horizontal,
+                  steps: [
+                    Step(
+                      title: Text("Start"),
+                      content: Text("Before starting, we should create a page."),
+                    ),
+                    Step(
+                      title: Text("Constructor"),
+                      content: Text("Let's look at its construtor."),
+                    ),
+                    Step(
+                        title: Text("Second"),
+                        subtitle: Text("Constructor"),
+                        content: Text("Let's look at its construtor."),
+                        state: StepState.editing,
+                        isActive: true),
+                    Step(
+                        title: Text("Third"),
+                        subtitle: Text("Constructor"),
+                        content: Text("Let's look at its construtor."),
+                        state: StepState.error),
+                    Step(
+                      title: Text("Constructor"),
+                      content: Text("Let's look at its construtor."),
+                    ),
+                    Step(
+                      title: Text("Constructor"),
+                      content: Text("Let's look at its construtor."),
+                    ),
+                    Step(
+                      title: Text("Constructor"),
+                      content: Text("Let's look at its construtor."),
+                    ),
+                    Step(
+                      title: Text("Constructor"),
+                      content: Text("Let's look at its construtor."),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
